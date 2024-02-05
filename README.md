@@ -93,7 +93,8 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 | [s1smart](https://github.com/s1smart)             | <https://s1smart.github.io/running_page/>      | Strava      |
 | [XmchxUp](https://github.com/XmchxUp)             | <https://xmchxup.github.io/running_page/>      | Strava      |
 | [Ryan](https://github.com/85Ryan)                 | <https://85ryan.github.io/gooorun/>            | Strava      |
-| [PPZ](https://github.com/8824PPZ)                 | <https://run.dudubbbbbbbbb.top/>            | Strava      |
+| [PPZ](https://github.com/8824PPZ)                 | <https://run.dudubbbbbbbbb.top/>               | Strava      |
+| [Yer1k](https://github.com/Yer1k)                 | <https://running.yer1k.com/>                   | Strava      |
 </details>
 
 ## How it works
@@ -215,6 +216,11 @@ siteMetadata: {
 const USE_DASH_LINE = true;
 // styling: route line opacity: [0, 1]
 const LINE_OPACITY = 0.4;
+// styling: set to `true` if you want to display only the routes without showing the map
+// Note: This config only affects the page display; please refer to "privacy protection" below for data protection
+const PRIVACY_MODE = false;
+// styling: set to `false` if you want to make light off as default, only effect when `PRIVACY_MODE` = false
+const LIGHTS_ON = true;
 ```
 
 - To use Google Analytics, you need to modify the configuration in the `src/utils/const.ts` file.
@@ -770,11 +776,11 @@ For more display effects, see:
 
 4. make sure you have write permissions in Workflow permissions settings.
 
-5. If you want to deploy your running_page to xxx.github.io instead of xxx.github.io/running_page, you need to do three things:
+5. If you want to deploy your running_page to xxx.github.io instead of xxx.github.io/running_page or redirect your GitHub Pages to a custom domain, you need to do three things:
 
 - Rename your forked running_page repository to `xxx.github.io`, where xxx is your GitHub username
 - Modify the Build module in gh-pages.yml, remove `${{ github.event.repository.name }}` and change to `run: PATH_PREFIX=/ pnpm build`
-- In `src/static/site-metadata.ts`, set siteUrl: ''
+- In `src/static/site-metadata.ts`, set siteUrl: '' or your custom domain URL
 
 </details>
 
